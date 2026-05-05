@@ -1,0 +1,559 @@
+/* Estilos Gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #faf4ff;
+  color: #32294f;
+  font-family: "Inter", sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background-color: #9795ff;
+  color: #14007e;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Ajudantes de Layout */
+.container {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 3rem;
+}
+
+.flex { display: flex; }
+.flex-coluna { flex-direction: column; }
+.alinhar-centro { align-items: center; }
+.espacar-entre { justify-content: space-between; }
+.espacamento-2 { gap: 0.5rem; }
+.espacamento-4 { gap: 1rem; }
+.espacamento-6 { gap: 1.5rem; }
+.espacamento-8 { gap: 2rem; }
+.espacamento-10 { gap: 2.5rem; }
+
+.grade { display: grid; }
+.grade-colunas-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.grade-colunas-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grade-colunas-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grade-colunas-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+/* Ícones e Grade Especial */
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+.grade-editorial {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: 2rem;
+}
+
+/* Menu Superior */
+.menu-superior {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 50;
+  background-color: white;
+  border-bottom: 1px solid #ede4ff;
+}
+
+.menu-conteudo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 3rem;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+.logotipo {
+  font-size: 1.5rem;
+  font-weight: 900;
+  letter-spacing: -0.05em;
+  color: #4338ca;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.menu-links {
+  display: none;
+  align-items: center;
+  gap: 2.5rem;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 500;
+  font-size: 0.875rem;
+  letter-spacing: -0.025em;
+}
+
+@media (min-width: 768px) {
+  .menu-links { display: flex; }
+}
+
+.link-menu {
+  color: #475569;
+}
+
+/* Removido hover do link-menu */
+
+.menu-acoes {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.botao-acao {
+  color: #4a40e0;
+}
+
+/* Removido hover do botao-acao */
+
+/* Parte Principal */
+main { padding-top: 8rem; }
+
+/* Sessão de Destaque */
+.conteudo-destaque {
+  grid-column: span 12;
+}
+
+@media (min-width: 1024px) {
+  .conteudo-destaque { grid-column: span 5; }
+}
+
+.titulo-destaque {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 800;
+  font-size: 5rem;
+  line-height: 1.05;
+  letter-spacing: -0.05em;
+  margin-bottom: 2rem;
+}
+
+.titulo-destaque span { color: #4a40e0; }
+
+.descricao-destaque {
+  font-size: 1.125rem;
+  color: #5f557f;
+  line-height: 1.625;
+  margin-bottom: 2.5rem;
+  max-width: 28rem;
+}
+
+.acoes-destaque {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.botao-principal {
+  background-color: #4a40e0;
+  color: #ffffff;
+  padding: 1.25rem 2.5rem;
+  border-radius: 9999px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+}
+
+/* Removido hover do botao-principal */
+
+.botao-texto {
+  color: #4a40e0;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  font-size: 1.125rem;
+  border-bottom: 2px solid #4a40e0;
+  padding-bottom: 0.25rem;
+}
+
+.visual-destaque {
+  grid-column: span 12;
+  position: relative;
+}
+
+@media (min-width: 1024px) {
+  .visual-destaque { grid-column: span 7; }
+}
+
+.moldura-foto-principal {
+  aspect-ratio: 4/5;
+  border-radius: 3rem;
+  overflow: hidden;
+  position: relative;
+}
+
+.camada-foto {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(74, 64, 224, 0.05);
+}
+
+.moldura-foto-secundaria {
+  display: none;
+  position: absolute;
+  bottom: -3rem;
+  left: -6rem;
+  width: 18rem;
+  height: 24rem;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  border: 5px solid #faf4ff;
+}
+
+@media (min-width: 1024px) {
+  .moldura-foto-secundaria { display: block; }
+}
+
+.foto-destaque {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Sessão de Características */
+.secao-caracteristicas {
+  background-color: #f5eeff;
+  padding: 8rem 0;
+  margin-bottom: 8rem;
+}
+
+.cabecalho-secao {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 5rem;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .cabecalho-secao { flex-direction: row; }
+}
+
+.etiqueta-secao {
+  font-family: "Inter", sans-serif;
+  color: #b00d6a;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.titulo-secao {
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.025em;
+  max-width: 36rem;
+}
+
+.descricao-secao {
+  max-width: 20rem;
+  color: #5f557f;
+  font-weight: 500;
+}
+
+.cartao-caracteristica {
+  background-color: #ffffff;
+  padding: 3rem;
+  border-radius: 1.5rem;
+}
+
+/* Removido hover do cartao-caracteristica */
+
+.moldura-icone {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.icone-azul { background-color: #ede4ff; color: #4a40e0; }
+.icone-rosa { background-color: #ffeff4; color: #b00d6a; }
+.icone-roxo { background-color: #f5eeff; color: #5f557f; }
+
+.titulo-caracteristica {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.texto-caracteristica {
+  color: #5f557f;
+  line-height: 1.625;
+}
+
+/* Sessão de Produtos */
+.secao-produtos { margin-bottom: 8rem; }
+
+.cabecalho-produtos {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+
+.link-ver-todos {
+  color: #4a40e0;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cartao-produto { cursor: pointer; }
+
+.moldura-foto-produto {
+  aspect-ratio: 3/4;
+  background-color: #f5eeff;
+  border-radius: 1.5rem;
+  overflow: hidden;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.foto-produto {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.selo {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  background-color: #b00d6a;
+  color: white;
+  font-size: 0.625rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+}
+
+.info-produto {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.nome-produto {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.categoria-produto {
+  font-size: 0.875rem;
+  color: #5f557f;
+}
+
+.preco-produto {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+  color: #4a40e0;
+}
+
+/* Depoimentos */
+.secao-depoimentos { margin-bottom: 8rem; }
+
+.caixa-depoimentos {
+  background-color: #10062d;
+  border-radius: 4rem;
+  padding: 6rem;
+  color: white;
+  position: relative;
+}
+
+.titulo-depoimentos {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 5rem;
+}
+
+.grade-depoimentos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 6rem;
+}
+
+@media (min-width: 768px) {
+  .grade-depoimentos { grid-template-columns: repeat(2, 1fr); }
+}
+
+.item-depoimento { display: flex; flex-direction: column; }
+
+.icone-aspas {
+  color: #fd8bca;
+  font-size: 3.75rem;
+  margin-bottom: 2rem;
+  font-variation-settings: "FILL" 1;
+}
+
+.texto-depoimento {
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1.625;
+  margin-bottom: 2.5rem;
+  font-style: italic;
+}
+
+.info-autor {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.moldura-foto-autor {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.nome-autor { font-weight: 700; }
+.cargo-autor { color: #a5b4fc; font-size: 0.875rem; }
+
+/* Newsletter */
+.secao-newsletter { margin-bottom: 8rem; }
+
+.conteudo-newsletter {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.formulario-newsletter {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  padding: 0.5rem;
+  background-color: #ede4ff;
+  border-radius: 9999px;
+}
+
+/* Removido focus-within do formulario-newsletter */
+
+.campo-newsletter {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 0 2rem;
+  font-weight: 500;
+  outline: none;
+}
+
+.campo-newsletter::placeholder { color: rgba(95, 85, 127, 0.5); }
+
+.botao-inscrever {
+  background-color: #4a40e0;
+  color: #f4f1ff;
+  padding: 1rem 2rem;
+  border-radius: 9999px;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 700;
+}
+
+/* Removido hover do botao-inscrever */
+
+/* Rodapé */
+footer {
+  background-color: #020617;
+  padding: 4rem 0;
+  margin-top: 5rem;
+}
+
+.rodape-conteudo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .rodape-conteudo { flex-direction: row; }
+}
+
+.rodape-marca {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+@media (min-width: 768px) {
+  .rodape-marca { align-items: flex-start; margin-bottom: 0; }
+}
+
+.rodape-logotipo {
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: white;
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.rodape-direitos {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #94a3b8;
+}
+
+.rodape-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2.5rem;
+}
+
+.link-rodape {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #94a3b8;
+}
+
+/* Removido hover do link-rodape */
+
+/* Espaçamentos */
+.margem-inferior-4 { margin-bottom: 1rem; }
+.margem-inferior-6 { margin-bottom: 1.5rem; }
+.margem-inferior-8 { margin-bottom: 2rem; }
+.margem-inferior-10 { margin-bottom: 2.5rem; }
+.margem-inferior-12 { margin-bottom: 3rem; }
+.margem-inferior-16 { margin-bottom: 4rem; }
+.margem-inferior-20 { margin-bottom: 5rem; }
+.margem-inferior-32 { margin-bottom: 8rem; }
